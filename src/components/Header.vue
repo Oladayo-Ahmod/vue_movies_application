@@ -47,6 +47,7 @@
 
 <script>
 import { ref } from 'vue'
+import env from '@/env.js'
 export default {
   name: "Header",
   setup(){
@@ -55,7 +56,12 @@ export default {
 
 	  const searchMovies=()=>{
 		  if (search.value !== '') {
-			  console.log(search.value);
+			//   console.log(search.value);
+			fetch(`http://www.omdbapi.com/?apikey=${env.apikey}&s=${search.value}`)
+			.then(response => response.json())
+			.then(data =>{
+				console.log(data);
+			});
 		  }
 	  }
 

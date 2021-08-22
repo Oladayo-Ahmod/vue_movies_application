@@ -1,6 +1,6 @@
 <template>
   <header>
-	  <Header v-on:searchMovies="searchMovies()" />
+	  <Header />
 	  <!-- <div class="mr-auto">
 			<form @submit.prevent="searchMovies()" class="form-inline mr-auto my-2 d-flex justify-content-center my-lg-0">
 				<input
