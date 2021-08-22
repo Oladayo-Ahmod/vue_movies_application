@@ -27,13 +27,14 @@
 
           </ul>
 		  <div class="mr-auto">
-			<form class="form-inline mr-auto my-2 d-flex justify-content-center my-lg-0">
+			<form @submit.prevent="searchMovies()" class="form-inline mr-auto my-2 d-flex justify-content-center my-lg-0">
 				<input
 				class="form-control line-height mr-sm-2 mr-md-2"
 				type="text"
 				placeholder="Search any movie"
+				v-model="search"
 				/>
-				<button class="btn btn-md line-height btn-outline-success my-2 ml-2 my-sm-0" type="submit">
+				<button  class="btn btn-md line-height btn-outline-success my-2 ml-2 my-sm-0" type="submit">
 					Search
 				</button>
 			</form>
@@ -45,8 +46,25 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
-  name: "Header"
+  name: "Header",
+  setup(){
+	  const search = ref("");
+	  const movies = ref([]);
+
+	  const searchMovies=()=>{
+		  if (search.value !== '') {
+			  console.log(search.value);
+		  }
+	  }
+
+	  return {
+		  search,
+		  movies,
+		  searchMovies
+	  }
+  }
 }
 // eslint-disable-next-line
 </script>
