@@ -2,7 +2,8 @@
   <header>
 	 <div class="container mt-0">
       <nav class="navbar px-2 mt-0  navbar-expand-lg navbar-light bg-light neo-shadow">
-        <a class="ml-3 navbar-brand" href="#">Navbar</a>
+        <router-link class="ml-3 navbar-brand text-primary" to="/">  Movies App</router-link>
+		<router-view/>
         <button
           class="navbar-toggler d-lg-none"
           type="button"
@@ -67,6 +68,7 @@
 							</div>
 						</div>
 					</router-link>
+					<router-view />
 				</div>
 		  </div>
 	  </div>
@@ -155,5 +157,8 @@ div.navbar-collapse{
 }
 .link{
 	text-decoration:none;
+}
+img{
+	height : 280px !important;
 }
 </style>

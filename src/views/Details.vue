@@ -1,5 +1,5 @@
 <template>
-  <h3>hi there</h3>
+  <h3>{{$route.param}}</h3>
 </template>
 
 <script>
