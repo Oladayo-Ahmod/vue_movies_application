@@ -18,8 +18,8 @@
         <div class="collapse navbar-collapse " id="collapsibleNavId">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#"
-                >Home <span class="sr-only"></span></a
+              <router-link class="nav-link" to="/"
+                >Home <span class="sr-only"></span></router-link
               >
             </li>
             <li class="nav-item">
@@ -49,8 +49,8 @@
   </header>
   <main>
   <Main />
-	<div class="container">
-		  <div class="row justify-content-center align-items-center">
+	<div class="container" :class="movies !== '' ? '' : '' ">
+		  <div class="row justify-content-center align-items-center ">
 				<div class="col-lg-3 col-md-6 col-6 m-3 " v-for="movie in movies" :key="movie.imdbID">
 					<router-link :to="'/details/'+movie.imdbID" class="link">
 						<div class="card rounded neo-shadow">
@@ -69,7 +69,16 @@
 						</div>
 					</router-link>
 					<router-view />
+
 				</div>
+				<div class="container neo-shadow rounded my-5 pt-3">
+						<div class="input-group mb-3">
+							<input type="text" v-model="search" class="form-control pl-3" placeholder="Search any movie"  aria-describedby="basic-addon2">
+							<div class="input-group-append">
+								<span @click="searchMovies()" class="input-group-text bg-primary" id="basic-addon2"><i class="fas text-white fa-search"></i></span>
+							</div>
+						</div>
+					</div>
 		  </div>
 	  </div>
   </main>
