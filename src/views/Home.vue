@@ -15,6 +15,9 @@
 			</form>
 		  </div> -->
   </header>
+  <main>
+	  
+  </main>
   <footer>
 	  <Footer />
   </footer>

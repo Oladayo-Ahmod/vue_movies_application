@@ -39,6 +39,9 @@
 				</button>
 			</form>
 		  </div>
+		  <!-- <div class="movies_list" v-for="movie in movies" :key="movie.imdbID">
+			  {{movie.Title}}
+		  </div> -->
         </div>
       </nav>
     </div>
@@ -60,7 +63,9 @@ export default {
 			fetch(`http://www.omdbapi.com/?apikey=${env.apikey}&s=${search.value}`)
 			.then(response => response.json())
 			.then(data =>{
-				console.log(data);
+				movies.value = data.Search;
+				search.value = "";
+				console.log(movies);
 			});
 		  }
 	  }
