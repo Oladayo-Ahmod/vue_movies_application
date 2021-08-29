@@ -49,11 +49,11 @@
   </header>
   <main>
   <Main />
-	<div class="container" :class="movies !== '' ? '' : '' ">
+	<div class="container" :class="{'red' : movies.value}">
 		  <div class="row justify-content-center align-items-center ">
-				<div class="col-lg-3 col-md-6 col-6 m-3 " v-for="movie in movies" :key="movie.imdbID">
+				<div class="col-lg-3 col-md-6 col-12 m-0 " v-for="movie in movies" :key="movie.imdbID">
 					<router-link :to="'/details/'+movie.imdbID" class="link">
-						<div class="card rounded neo-shadow">
+						<div class="card rounded neo-shadow my-3">
 							<img class="card-img-top" :src="movie.Poster" alt="">
 							<div class="card-body">
 								<h6 class="card-title"><i class="fas text-primary fa-heading"></i> {{movie.Title}}</h6>
@@ -167,7 +167,11 @@ div.navbar-collapse{
 .link{
 	text-decoration:none;
 }
+.red{
+	background-color: green;
+}
 img{
+	/* width : 100%; */
 	height : 280px !important;
 }
 </style>
